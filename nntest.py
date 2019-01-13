@@ -1,6 +1,8 @@
 import neuralnet
 import numpy as np
 
+np.random.seed(104)
+
 network = neuralnet.Network([2,3,4,3,2,1])
 network.describe()
 x = np.array([[0,0],[0,1],[1,0],[1,1]]).T
@@ -33,7 +35,7 @@ print("Initial outputs of network :")
 print(net.feedforward(data.T))
 print("Expected output of the network :")
 print(label)
-net.SGD(data,label,10e-3,200000,1)
+net.SGD(data,label,10e-2,2000,1)
 print("After training :")
 print(net.feedforward(data.T))
 net.describe()
