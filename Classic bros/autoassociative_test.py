@@ -94,4 +94,10 @@ print("Inputs :")
 print(input_vector)
 cell = autoassociative.AutoAssociativeMemoryCell(inputs_shape,(6,5))
 cell.compute_weights_pseudoinverse(input_vector)
+cell.visualize_pattern(input_vector[:,7])
 cell.compute_result(input_vector[:,7])
+seven_copy = seven.copy()
+seven_copy[4] = -1
+seven_copy[27] = -1
+cell.visualize_pattern(seven_copy)
+cell.compute_result(seven_copy)
