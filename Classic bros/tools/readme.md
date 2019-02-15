@@ -2,13 +2,14 @@
 
 ## Pattern Creator
 File : patterncreator.py
+
 Requirement : 
 1. numpy
 2. tkinter (maybe already installed with python, idk)
 3. Python 3
 
 Usage :
-python patterncreator.py &lt;number of rows&lt; &gt;number of cols&lt;
+python patterncreator.py &lt;number of rows&gt; &lt;number of cols&gt;
 
 The GUI has 4 buttons :
 1. Reset
