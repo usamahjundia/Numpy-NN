@@ -5,13 +5,14 @@ from functools import partial
 
 class Window(tk.Frame):
 
-    def __init__(self,dimension,master=None):
+    def __init__(self,dimension,filename,master=None):
         tk.Frame.__init__(self,master)
         self.master = master
         self.dimension = dimension
         self.patterns = []
         self.currentpattern = np.full(dimension[0]*dimension[1],-1)
         self.buttons = []
+        self.filename = filename
         self.init_window()
     
     def clear(self):
@@ -31,7 +32,7 @@ class Window(tk.Frame):
         self.clear()
 
     def save(self):
-        name = "hasil.npy"
+        name = self.filename
         to_save = np.array(self.patterns)
         np.save(name,to_save)
         self.reset()
@@ -68,12 +69,13 @@ class Window(tk.Frame):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("pls specify the rows and cols")
+    if len(sys.argv) < 4:
+        print("pls specify the rows and cols and target filename")
+        print("Usage: patterncreator.py <rows> <cols> <filename>")
         exit()
     rows = int(sys.argv[1])
     cols = int(sys.argv[2])
     root = tk.Tk()
-    app = Window(dimension=(rows,cols),master=root)
+    app = Window(dimension=(rows,cols),filename=sys.argv[3],master=root)
     root.geometry("400x300")
     root.mainloop()
