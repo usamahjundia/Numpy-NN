@@ -1,6 +1,6 @@
 ## Good ol' neural networks
 
-This folder contains the numpy implementation for good old multi-layer neural network.
+This folder contains the numpy implementation for good old multi-layered neural network.
 
 Tasks :
 - [x] Implement Feedforward
